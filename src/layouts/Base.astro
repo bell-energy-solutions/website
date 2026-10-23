@@ -1,7 +1,13 @@
 ---
 import '../styles/global.css';
 import LogoMark from '../components/LogoMark.astro';
+import BusinessSchema from '../components/BusinessSchema.astro';
+import { getImage } from 'astro:assets';
+import heroPhoto from '../assets/photos/blower-door-two-fan-setup.jpg';
 import { business, credentials, services } from '../data/business';
+
+// Social-share preview image (link previews in texts, Facebook, LinkedIn).
+const ogImage = await getImage({ src: heroPhoto, width: 1200, height: 630, format: 'jpg' });
 
 interface Props {
   title: string;
@@ -36,6 +42,15 @@ const isCurrent = (href: string) => {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage.src, Astro.site).href} />
+    <meta property="og:image:alt" content="Two blower door fans set up in a doorway during an air leakage test" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {path === '/' && <BusinessSchema />}
     <meta name="theme-color" content="#13243c" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />

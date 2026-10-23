@@ -1,0 +1,42 @@
+---
+// LocalBusiness structured data for search engines. Facts come from src/data/business.ts.
+// Service-area business with no public address, so no address or coordinates are given.
+import { getImage } from 'astro:assets';
+import { business, serviceArea, services, credentials } from '../data/business';
+import heroPhoto from '../assets/photos/blower-door-two-fan-setup.jpg';
+
+const photo = await getImage({ src: heroPhoto, width: 1200, format: 'jpg' });
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': `${business.url}/#business`,
+  name: business.name,
+  url: business.url,
+  telephone: '+1-971-340-7390',
+  email: business.email,
+  logo: `${business.url}/favicon.svg`,
+  image: new URL(photo.src, business.url).href,
+  description:
+    'Consulting, design, and third-party testing for comfortable, quality homes, plus commercial blower door testing. ERI scores show the results.',
+  areaServed: [
+    ...serviceArea.regions.flatMap((r) => r.towns.map((t) => ({ '@type': 'City', name: `${t}, ${r.name.endsWith('WA') ? 'WA' : 'ID'}` }))),
+    { '@type': 'AdministrativeArea', name: 'Spokane County, WA' },
+    { '@type': 'AdministrativeArea', name: 'Kootenai County, ID' },
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  hasCredential: credentials.map((c) => ({ '@type': 'EducationalOccupationalCredential', name: c })),
+  makesOffer: services.map((s) => ({
+    '@type': 'Offer',
+    itemOffered: { '@type': 'Service', name: s.name, description: s.short, url: `${business.url}/services/${s.slug}/` },
+  })),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
