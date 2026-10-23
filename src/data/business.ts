@@ -14,16 +14,19 @@ export const business = {
 };
 
 export const serviceArea = {
-  // Owner said "primarily": use `line` where the sentence doesn't already say so.
-  summary: 'Spokane and Spokane County, WA, and Kootenai County in North Idaho',
-  line: 'Primarily Spokane and Spokane County, WA, and Kootenai County, ID',
+  summary: 'Eastern Washington and North Idaho',
+  base: 'Spokane, WA',
+  line: 'Eastern Washington and North Idaho, based in Spokane',
+  // Example towns (owner-approved); the service area is the two regions, not only these towns.
   regions: [
     {
-      name: 'Spokane County, WA',
+      name: 'Eastern Washington',
+      state: 'WA',
       towns: ['Spokane', 'Spokane Valley', 'Liberty Lake', 'Cheney', 'Airway Heights', 'Mead', 'Deer Park'],
     },
     {
-      name: 'Kootenai County, ID',
+      name: 'North Idaho',
+      state: 'ID',
       towns: ["Coeur d'Alene", 'Post Falls', 'Hayden', 'Rathdrum'],
     },
   ],

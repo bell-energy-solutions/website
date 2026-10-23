@@ -15,9 +15,10 @@ interface Props {
   image?: ImageMetadata;
   alt?: string;
   position?: string;
+  wide?: boolean;
 }
 
-const { title, description, heading, lead, photo, slug, image, alt, position } = Astro.props;
+const { title, description, heading, lead, photo, slug, image, alt, position, wide } = Astro.props;
 const others = services.filter((s) => s.slug !== slug);
 ---
 <Base title={title} description={description}>
@@ -39,7 +40,7 @@ const others = services.filter((s) => s.slug !== slug);
         </div>
       </div>
       <div>
-        <PhotoSlot label={photo} image={image} alt={alt} position={position} />
+        <PhotoSlot label={photo} image={image} alt={alt} position={position} wide={wide} />
         <slot name="aside" />
       </div>
     </div>

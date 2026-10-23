@@ -1,14 +1,18 @@
 ---
 import Service from '../../layouts/Service.astro';
 import { serviceArea, business } from '../../data/business';
+import thermal from '../../assets/photos/thermal-image-comparison.jpg';
 ---
 <Service
   slug="thermal-imaging"
   title="Thermal Imaging in Spokane | Bell Energy Solutions"
-  description="Active thermography (infrared thermal imaging) of the building envelope for builders, designers, and homeowners in Spokane County."
+  description="Active thermography (infrared thermal imaging) of the building envelope for builders, designers, and homeowners in Eastern Washington and North Idaho."
   heading="Thermal Imaging"
   lead="Active thermography: infrared imaging of the building envelope."
   photo="Thermal image of a wall or ceiling"
+  image={thermal}
+  alt="Infrared image beside a regular photo of the same room: the thermal view shows cooler areas near the patio door and along the wall framing"
+  wide
 >
   <h2>What thermography shows</h2>
   <p>An infrared camera displays apparent surface temperature differences. In buildings, those patterns can reveal air leakage, missing or compressed insulation, and thermal bridging that aren't visible to the eye.</p>

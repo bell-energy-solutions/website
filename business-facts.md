@@ -14,9 +14,10 @@ This file is the single source of truth for the website. Nothing goes on the sit
 - Prices: not shown; "Contact us for a quote"
 - Testimonials: none. Do not add any.
 
-## Service area
-- Spokane and Spokane County, WA; North Idaho: Kootenai County (owner said "primarily")
-- Towns to name: Spokane, Spokane Valley, Liberty Lake, Cheney, Airway Heights, Mead, Deer Park (Spokane County); Coeur d'Alene, Post Falls, Hayden, Rathdrum (Kootenai County)
+## Service area (owner, 2026-10-23; replaces "Spokane County and Kootenai County")
+- Eastern Washington and North Idaho
+- Spokane-based company (based in Spokane, WA; still no street address shown)
+- Towns to name as examples (approved 2026-10-22): Spokane, Spokane Valley, Liberty Lake, Cheney, Airway Heights, Mead, Deer Park (Eastern Washington); Coeur d'Alene, Post Falls, Hayden, Rathdrum (North Idaho)
 
 ## Customers
 - Builders, architects, engineering firms, and home designers
@@ -54,7 +55,7 @@ This file is the single source of truth for the website. Nothing goes on the sit
 - Tone: professional, sharp, very technical
 - Colors: red is the main color; dark blue is secondary. No green (owner, 2026-10-23).
 - Logo: blower door fan mark (owner chose option A, 2026-10-23), redrawn from the owner's own DBA logo: frame, outline and two blades red, one blade dark blue, no text. Shown beside "Bell Energy Solutions" in the header and as the browser-tab icon (src/components/LogoMark.astro, public/favicon.svg).
-- Photos: owner supplied 3 (2026-10-23); 2 blower door photos used. Furnace/meter photo held (shows another company's labels). Leave spaces for more photos.
+- Photos: owner supplied 3 (2026-10-23); 2 blower door photos used. Thermal comparison image on the Thermal Imaging page (owner confirmed it's their own photo, 2026-10-23; low resolution, swap for the camera original if available). Furnace/meter photo held (shows another company's labels). Leave spaces for more photos.
 - No chat pop-ups
 - Search phrases (approved): ERI score Spokane; energy rater Spokane; energy rater Coeur d'Alene; blower door test Spokane; air leakage test Coeur d'Alene; Washington State Energy Code compliance Spokane; thermal imaging inspection Spokane; radon testing Spokane; radon testing Coeur d'Alene; ENERGY STAR verifier Spokane; energy efficient home design consultant Spokane
 
