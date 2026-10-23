@@ -110,7 +110,7 @@ p { margin: 0 0 1em; }
 .card .more::after { content: " →"; }
 .card-link { text-decoration: none; color: inherit; transition: border-color .15s, transform .15s; }
 .card-link:hover { border-top-color: var(--red); transform: translateY(-2px); color: inherit; }
-.tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); background: #e7f3ec; padding: 3px 8px; border-radius: 3px; margin-bottom: 10px; align-self: flex-start; }
+.tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #1e5c38; background: #e7f3ec; padding: 3px 8px; border-radius: 3px; margin-bottom: 10px; align-self: flex-start; }
 
 .checklist { list-style: none; padding: 0; margin: 0 0 1em; }
 .checklist li { position: relative; padding: 8px 0 8px 32px; border-bottom: 1px solid var(--line); }

@@ -8,6 +8,8 @@ guide/
 node_modules/
 dist/
 .astro/
+test-results/
+playwright-report/
 .site-builder/*.log
 .site-builder/research.md
 .claude/settings.local.json
