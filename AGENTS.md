@@ -14,8 +14,9 @@
   credentials, service areas, testimonials, stats, or guarantees.
 - If a request needs a fact that isn't there, stop and ask in the issue or PR.
 - Read the "Never say" section of business-facts.md before writing any copy. In particular:
-  never call the owner's service a "HERS rating" or the owner a "HERS rater", never
-  mention ABAA, and never mention the Idaho energy code.
+  never call the owner's service a "HERS rating" or the owner a "HERS rater" (the only
+  approved HERS mention is the ERI-vs-HERS Q&A on the ERI page), never mention ABAA,
+  and never mention the Idaho energy code.
 
 ## The owner
 - The owner is non-technical. Explain everything in plain language, with no jargon.

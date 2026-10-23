@@ -45,7 +45,7 @@ This file is the single source of truth for the website. Nothing goes on the sit
 - Retrotec certified for residential and commercial blower door testing
 
 ## Never say
-- "HERS rating", "HERS rater", or any claim to provide HERS ratings. HERS is RESNET's registered trademark and the owner is not a RESNET HERS rater. No HERS on the pages. Owner wants HERS considered for search in Phase 4: only in a truthful, visible way (e.g. a FAQ explaining ERI vs HERS), never hidden keywords.
+- "HERS rating", "HERS rater", or any claim to provide HERS ratings. HERS is RESNET's registered trademark and the owner is not a RESNET HERS rater. The ONLY approved mention of HERS (owner, 2026-10-23) is this Q&A on the ERI page: "Is an ERI score the same as a HERS rating? Both are Energy Rating Index scores based on the same national standard (ANSI/RESNET/ICC 301). 'HERS' is RESNET's brand name for its version, produced by RESNET-certified raters. Bell Energy Solutions produces ERI scores as a Building Science Institute (BSI) Level 2 Verifier. We are not a RESNET HERS rater." Never hidden keywords; no other HERS mentions without the owner's OK.
 - ABAA (Air Barrier Association of America): not yet certified. Leave off until the owner confirms certification.
 - ISO certification for BSI: not verified.
 - Anything about the Idaho energy code.
