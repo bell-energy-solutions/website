@@ -1,0 +1,116 @@
+# Safety checks on every pull request. A change can only be merged when all of these pass.
+#  1. build: type checks, build, page titles/descriptions/H1s, broken links, HTML validation
+#  2. preview: uploads a private preview version to Cloudflare and comments the link on the PR
+#  3. test-preview: Playwright tests and Lighthouse run against that preview
+
+name: Checks
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Type checks
+        run: npm run check
+      - name: Build
+        run: npm run build
+        env:
+          FORM_ACCESS_KEY: ${{ secrets.FORM_ACCESS_KEY }}
+      - name: Titles, descriptions, H1s, broken links, HTML validation
+        run: npm run check:html
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  preview:
+    needs: build
+    # Secrets aren't available to pull requests from forks.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      url: ${{ steps.upload.outputs.url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist
+      - name: Upload preview version to Cloudflare
+        id: upload
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler versions upload \
+            --preview-alias "pr-${{ github.event.pull_request.number }}" \
+            --message "PR #${{ github.event.pull_request.number }}" | tee wrangler.log
+          url=$(grep -oE 'https://pr-[0-9]+-[a-z0-9.-]+\.workers\.dev' wrangler.log | head -n1)
+          if [ -z "$url" ]; then echo "No preview URL found in Wrangler output"; exit 1; fi
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Comment the preview link on the PR
+        uses: actions/github-script@v9
+        env:
+          PREVIEW_URL: ${{ steps.upload.outputs.url }}
+        with:
+          script: |
+            const marker = '<!-- preview-link -->';
+            const body = `${marker}\n### 👀 Preview this change\n\n**${process.env.PREVIEW_URL}**\n\nOpen it on your phone and computer. If it looks right and all checks are green, click **Merge pull request**.`;
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const existing = comments.find((c) => c.body?.includes(marker));
+            if (existing) await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number, body });
+
+  test-preview:
+    needs: preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Playwright tests against the preview
+        run: npx playwright test
+        env:
+          BASE_URL: ${{ needs.preview.outputs.url }}
+      - name: Lighthouse (every score must be 90+)
+        run: >-
+          npm run lighthouse -- ${{ needs.preview.outputs.url }}
+          / /services/ /services/design-consulting/ /services/blower-door-testing/
+          /services/commercial-blower-door-testing/ /services/eri-scores/ /contact/ /about/
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: test-results
+          path: test-results
+          retention-days: 7
