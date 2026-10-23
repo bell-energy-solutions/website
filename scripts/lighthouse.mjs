@@ -5,6 +5,9 @@ import lighthouse from 'lighthouse';
 import { writeFile, mkdir } from 'node:fs/promises';
 
 const [base, ...paths] = process.argv.slice(2);
+// Cloudflare preview URLs (pr-N-...) are served with "noindex" on purpose, so the
+// crawlability audit would always fail there. It still runs against the live site.
+const isPreview = /\/\/pr-\d+-/.test(base);
 const port = 9333;
 const browser = await chromium.launch({ args: [`--remote-debugging-port=${port}`] });
 await mkdir('test-results/lighthouse', { recursive: true });
@@ -15,6 +18,7 @@ for (const path of paths) {
     output: 'json',
     logLevel: 'error',
     onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
+    ...(isPreview ? { skipAudits: ['is-crawlable'] } : {}),
   });
   const c = result.lhr.categories;
   const s = (k) => Math.round(c[k].score * 100);
