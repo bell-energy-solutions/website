@@ -5,14 +5,14 @@ import { business, credentials, services, serviceArea } from '../data/business';
 ---
 <Base
   title="ERI Scores & Building Testing | Bell Energy Solutions"
-  description="ERI scores, blower door testing, thermal imaging, radon testing, and WSEC compliance help in Spokane County and Kootenai County."
+  description="ERI scores, blower door testing, thermal imaging, and radon testing in Spokane and Kootenai County, plus WSEC compliance help in Spokane County."
 >
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <p class="eyebrow">Spokane County · Kootenai County</p>
         <h1>ERI scores and building performance testing</h1>
-        <p class="lead">Third-party verification for builders, architects, engineering firms, and home designers: ERI scores, blower door testing, active thermography, radon testing, and Washington State Energy Code compliance help.</p>
+        <p class="lead">Services for builders, architects, engineering firms, and home designers: ERI scores, third-party blower door testing, active thermography, radon testing, and Washington State Energy Code compliance help.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href={business.phoneHref}>Call {business.phone}</a>
           <a class="btn btn-light" href="/contact/">Request a quote</a>
@@ -26,8 +26,8 @@ import { business, credentials, services, serviceArea } from '../data/business';
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Services</p>
-        <h2>Verification, testing, and code compliance</h2>
-        <p>One provider for the energy rating, the field testing, and the code paperwork.</p>
+        <h2>Ratings, testing, and code compliance</h2>
+        <p>ERI scores, field testing, and Washington State Energy Code compliance help.</p>
       </div>
       <div class="grid-3">
         {services.map((s) => (
@@ -45,8 +45,7 @@ import { business, credentials, services, serviceArea } from '../data/business';
   <section class="section section-alt">
     <div class="container grid-2">
       <div>
-        <p class="eyebrow">Credentials</p>
-        <h2>Certified for the work</h2>
+        <h2>Credentials</h2>
         <ul class="checklist">
           {credentials.map((c) => <li>{c}</li>)}
         </ul>
@@ -54,10 +53,10 @@ import { business, credentials, services, serviceArea } from '../data/business';
       <div>
         <p class="eyebrow">Who we work with</p>
         <h2>Built for project teams</h2>
-        <p>Bell Energy Solutions works with builders, architects, engineering firms, and home designers on ERI scores, testing, and Washington State Energy Code compliance.</p>
-        <p>Homeowners can book blower door testing, radon testing, and thermal imaging directly.</p>
+        <p>Bell Energy Solutions works with builders, architects, engineering firms, and home designers on ERI scores and testing, and on Washington State Energy Code compliance for Washington projects.</p>
+        <p>Homeowners can book blower door testing, radon testing, and thermal imaging.</p>
         <div class="callout">
-          <strong>Service area:</strong> {serviceArea.summary}. <a href="/service-area/">See towns</a>
+          <strong>Service area:</strong> {serviceArea.line}. <a href="/service-area/">See towns</a>
         </div>
       </div>
     </div>

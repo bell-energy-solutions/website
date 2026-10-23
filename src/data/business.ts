@@ -14,7 +14,9 @@ export const business = {
 };
 
 export const serviceArea = {
+  // Owner said "primarily": use `line` where the sentence doesn't already say so.
   summary: 'Spokane and Spokane County, WA, and Kootenai County in North Idaho',
+  line: 'Primarily Spokane and Spokane County, WA, and Kootenai County, ID',
   regions: [
     {
       name: 'Spokane County, WA',
@@ -52,13 +54,13 @@ export const services: Service[] = [
   {
     slug: 'blower-door-testing',
     name: 'Air Leakage Testing',
-    short: 'Third-party blower door testing for residential and commercial buildings.',
+    short: 'Third-party blower door testing by a Retrotec-certified tester.',
     homeowners: true,
   },
   {
     slug: 'thermal-imaging',
     name: 'Thermal Imaging',
-    short: 'Active thermography to locate air leakage and thermal defects.',
+    short: 'Active thermography (infrared imaging) of the building envelope.',
     homeowners: true,
   },
   {
