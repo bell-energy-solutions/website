@@ -1,6 +1,7 @@
 ---
 import Service from '../../layouts/Service.astro';
 import { serviceArea, business } from '../../data/business';
+import frames from '../../assets/photos/retrotec-blower-door-frames.jpg';
 ---
 <Service
   slug="blower-door-testing"
@@ -9,6 +10,9 @@ import { serviceArea, business } from '../../data/business';
   heading="Blower Door Testing"
   lead="Third-party air leakage testing for homes, by a Retrotec-certified tester."
   photo="Blower door set up in a doorway"
+  image={frames}
+  alt="Retrotec blower door frames with red SmartCloth panels"
+  position="50% 45%"
 >
   <h2>How a blower door test works</h2>
   <p>A blower door fan is sealed into an exterior doorway and used to depressurize or pressurize the building to a set pressure difference, typically 50 pascals. The airflow needed to hold that pressure shows how leaky the building envelope is.</p>

@@ -14,3 +14,6 @@ playwright-report/
 .site-builder/research.md
 .claude/settings.local.json
 .claude/launch.json
+
+# Owner's original photos (may contain location data); optimized copies live in src/assets/photos
+photos/

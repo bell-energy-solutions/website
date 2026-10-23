@@ -1,6 +1,7 @@
 ---
 import Service from '../../layouts/Service.astro';
 import { serviceArea, business } from '../../data/business';
+import twoFan from '../../assets/photos/blower-door-two-fan-setup.jpg';
 ---
 <Service
   slug="commercial-blower-door-testing"
@@ -9,6 +10,9 @@ import { serviceArea, business } from '../../data/business';
   heading="Commercial Blower Door Testing"
   lead="Third-party air leakage testing of commercial buildings, including multi-fan setups, by a Retrotec-certified tester."
   photo="Multi-fan blower door setup on a commercial building"
+  image={twoFan}
+  alt="Two Retrotec blower door fans running together in one doorway"
+  position="50% 62%"
 >
   <h2>Whole-building air leakage testing</h2>
   <p>Commercial blower door testing measures how much air a building's envelope leaks. Fans are sealed into exterior openings and used to pressurize or depressurize the building to a set pressure difference. The airflow needed to hold that pressure shows how tight the envelope is.</p>

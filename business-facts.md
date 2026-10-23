@@ -53,8 +53,8 @@ This file is the single source of truth for the website. Nothing goes on the sit
 ## Look, feel, and rules
 - Tone: professional, sharp, very technical
 - Colors: red is the main color; dark blue is secondary. No green (owner, 2026-10-23).
-- Logo: none yet. Use "Bell Energy Solutions" as styled text in red.
-- Photos: owner will add later; leave spaces for photos
+- Logo: blower door fan mark (owner chose option A, 2026-10-23), redrawn from the owner's own DBA logo: frame, outline and two blades red, one blade dark blue, no text. Shown beside "Bell Energy Solutions" in the header and as the browser-tab icon (src/components/LogoMark.astro, public/favicon.svg).
+- Photos: owner supplied 3 (2026-10-23); 2 blower door photos used. Furnace/meter photo held (shows another company's labels). Leave spaces for more photos.
 - No chat pop-ups
 - Search phrases (approved): ERI score Spokane; energy rater Spokane; energy rater Coeur d'Alene; blower door test Spokane; air leakage test Coeur d'Alene; Washington State Energy Code compliance Spokane; thermal imaging inspection Spokane; radon testing Spokane; radon testing Coeur d'Alene; ENERGY STAR verifier Spokane; energy efficient home design consultant Spokane
 

@@ -1,0 +1,42 @@
+---
+// Blower door fan mark, redrawn from the owner's existing logo (owner, 2026-10-23):
+// frame, outline and two blades in red; third blade in dark blue; no text.
+interface Props {
+  size?: number;
+  class?: string;
+}
+const { size = 40, class: className } = Astro.props;
+
+const c = 300;
+const red = '#b3202a';
+const blue = '#1d3557';
+
+// Annular wedge between radii r1 and r2, from angle a1 to a2 (degrees, clockwise from +x).
+function wedge(a1: number, a2: number, r1 = 58, r2 = 212) {
+  const p = (r: number, a: number) => {
+    const t = (a * Math.PI) / 180;
+    return `${(c + r * Math.cos(t)).toFixed(1)} ${(c + r * Math.sin(t)).toFixed(1)}`;
+  };
+  const large = a2 - a1 > 180 ? 1 : 0;
+  return `M${p(r1, a1)} L${p(r2, a1)} A${r2} ${r2} 0 ${large} 1 ${p(r2, a2)} L${p(r1, a2)} A${r1} ${r1} 0 ${large} 0 ${p(r1, a1)} Z`;
+}
+
+const d = 159; // where the 45° spokes meet the outer circle (225 / √2)
+---
+<svg class={className} width={size} height={size} viewBox="0 0 600 600" role="img" aria-label="Bell Energy Solutions logo" xmlns="http://www.w3.org/2000/svg">
+  <rect x="12" y="12" width="576" height="576" fill="#fff" stroke={red} stroke-width="24" />
+  <g stroke={red} stroke-width="11" stroke-linecap="butt">
+    <line x1="24" y1="24" x2={c - d} y2={c - d} />
+    <line x1="576" y1="24" x2={c + d} y2={c - d} />
+    <line x1="24" y1="576" x2={c - d} y2={c + d} />
+    <line x1="576" y1="576" x2={c + d} y2={c + d} />
+    <line x1={c} y1="24" x2={c} y2="75" />
+    <line x1={c} y1="525" x2={c} y2="576" />
+    <line x1="24" y1={c} x2="75" y2={c} />
+    <line x1="525" y1={c} x2="576" y2={c} />
+  </g>
+  <circle cx={c} cy={c} r="225" fill="none" stroke={red} stroke-width="11" />
+  <path d={wedge(-116, 0)} fill={red} />
+  <path d={wedge(130, 223)} fill={red} />
+  <path d={wedge(27, 117)} fill={blue} />
+</svg>

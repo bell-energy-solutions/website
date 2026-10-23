@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import PhotoSlot from '../components/PhotoSlot.astro';
 import { business, credentials, services, serviceArea } from '../data/business';
+import twoFan from '../assets/photos/blower-door-two-fan-setup.jpg';
+import frames from '../assets/photos/retrotec-blower-door-frames.jpg';
 ---
 <Base
   title="Comfortable, Quality Homes, Tested | Bell Energy Solutions"
@@ -18,7 +20,7 @@ import { business, credentials, services, serviceArea } from '../data/business';
           <a class="btn btn-light" href="/contact/">Request a quote</a>
         </div>
       </div>
-      <PhotoSlot label="Hero: blower door test or job site" />
+      <PhotoSlot label="Hero: blower door test or job site" image={twoFan} alt="Two Retrotec blower door fans set up in an exterior doorway during an air leakage test" position="50% 62%" eager />
     </div>
   </section>
 
@@ -65,7 +67,7 @@ import { business, credentials, services, serviceArea } from '../data/business';
 
   <section class="section">
     <div class="container grid-2">
-      <PhotoSlot label="Thermal image or testing equipment" wide />
+      <PhotoSlot label="Thermal image or testing equipment" wide image={frames} alt="Retrotec blower door frames with red SmartCloth panels" position="50% 52%" />
       <div>
         <p class="eyebrow">Scheduling</p>
         <h2>By appointment</h2>

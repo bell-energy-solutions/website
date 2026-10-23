@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import LogoMark from '../components/LogoMark.astro';
 import { business, credentials, services } from '../data/business';
 
 interface Props {
@@ -41,7 +42,7 @@ const isCurrent = (href: string) => {
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>{business.name}</a>
+        <a class="brand" href="/"><LogoMark size={40} class="brand-logo" />{business.name}</a>
         <nav class="nav" id="site-nav" aria-label="Main">
           {nav.map((item) => (
             <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>

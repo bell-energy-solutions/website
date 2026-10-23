@@ -3,6 +3,8 @@ import Base from './Base.astro';
 import PhotoSlot from '../components/PhotoSlot.astro';
 import { business, services } from '../data/business';
 
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   description: string;
@@ -10,9 +12,12 @@ interface Props {
   lead: string;
   photo: string;
   slug: string;
+  image?: ImageMetadata;
+  alt?: string;
+  position?: string;
 }
 
-const { title, description, heading, lead, photo, slug } = Astro.props;
+const { title, description, heading, lead, photo, slug, image, alt, position } = Astro.props;
 const others = services.filter((s) => s.slug !== slug);
 ---
 <Base title={title} description={description}>
@@ -34,7 +39,7 @@ const others = services.filter((s) => s.slug !== slug);
         </div>
       </div>
       <div>
-        <PhotoSlot label={photo} />
+        <PhotoSlot label={photo} image={image} alt={alt} position={position} />
         <slot name="aside" />
       </div>
     </div>
