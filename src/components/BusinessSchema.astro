@@ -20,9 +20,9 @@ const schema = {
   description:
     'Consulting, design, and third-party testing for comfortable, quality homes, plus commercial blower door testing. ERI scores show the results.',
   areaServed: [
-    ...serviceArea.regions.flatMap((r) => r.towns.map((t) => ({ '@type': 'City', name: `${t}, ${r.name.endsWith('WA') ? 'WA' : 'ID'}` }))),
-    { '@type': 'AdministrativeArea', name: 'Spokane County, WA' },
-    { '@type': 'AdministrativeArea', name: 'Kootenai County, ID' },
+    { '@type': 'AdministrativeArea', name: 'Eastern Washington' },
+    { '@type': 'AdministrativeArea', name: 'North Idaho' },
+    ...serviceArea.regions.flatMap((r) => r.towns.map((t) => ({ '@type': 'City', name: `${t}, ${r.state}` }))),
   ],
   openingHoursSpecification: [
     {
