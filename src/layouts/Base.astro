@@ -13,12 +13,15 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 const nav = [
   { href: '/services/', label: 'Services' },
+  { href: '/services/commercial-blower-door-testing/', label: 'Commercial Testing' },
   { href: '/service-area/', label: 'Service Area' },
   { href: '/about/', label: 'About' },
   { href: '/contact/', label: 'Contact' },
 ];
 const isCurrent = (href: string) => {
   const h = href.replace(/\/$/, '');
+  // Commercial Testing has its own tab, so don't also mark Services current there.
+  if (h === '/services' && path === '/services/commercial-blower-door-testing') return false;
   return path === h || path.startsWith(h + '/');
 };
 ---
@@ -76,7 +79,7 @@ const isCurrent = (href: string) => {
         <div class="footer-grid">
           <div>
             <h3>{business.name}</h3>
-            <p>ERI scores, third-party air leakage testing, thermal imaging, radon testing, and Washington State Energy Code compliance help.</p>
+            <p>Consulting, design, and third-party testing for comfortable, quality homes, plus commercial blower door testing.</p>
             <p><a href={business.phoneHref}>{business.phone}</a><br /><a href={`mailto:${business.email}`}>{business.email}</a></p>
           </div>
           <div>

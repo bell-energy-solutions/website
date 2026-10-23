@@ -4,15 +4,15 @@ import PhotoSlot from '../components/PhotoSlot.astro';
 import { business, credentials, services, serviceArea } from '../data/business';
 ---
 <Base
-  title="ERI Scores & Building Testing | Bell Energy Solutions"
-  description="ERI scores, blower door testing, thermal imaging, and radon testing in Spokane and Kootenai County, plus WSEC compliance help in Spokane County."
+  title="Comfortable, Quality Homes, Tested | Bell Energy Solutions"
+  description="Consulting, design, and third-party testing for comfortable, quality homes, plus commercial blower door testing, in Spokane and Kootenai County."
 >
   <section class="hero">
     <div class="container hero-grid">
       <div>
         <p class="eyebrow">Spokane County · Kootenai County</p>
-        <h1>ERI scores and building performance testing</h1>
-        <p class="lead">Services for builders, architects, engineering firms, and home designers: ERI scores, third-party blower door testing, active thermography, radon testing, and Washington State Energy Code compliance help.</p>
+        <h1>Comfortable, quality homes, proven by testing</h1>
+        <p class="lead">Bell Energy Solutions helps builders, architects, engineering firms, and home designers build comfortable, quality homes through consulting and design, then third-party tests them. ERI scores show the results.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href={business.phoneHref}>Call {business.phone}</a>
           <a class="btn btn-light" href="/contact/">Request a quote</a>
@@ -26,8 +26,8 @@ import { business, credentials, services, serviceArea } from '../data/business';
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Services</p>
-        <h2>Ratings, testing, and code compliance</h2>
-        <p>ERI scores, field testing, and Washington State Energy Code compliance help.</p>
+        <h2>Consulting, design, and third-party testing</h2>
+        <p>Plan it right, test it, and prove it: consulting and design up front, third-party testing to verify the work, and ERI scores to show the results.</p>
       </div>
       <div class="grid-3">
         {services.map((s) => (
@@ -53,7 +53,8 @@ import { business, credentials, services, serviceArea } from '../data/business';
       <div>
         <p class="eyebrow">Who we work with</p>
         <h2>Built for project teams</h2>
-        <p>Bell Energy Solutions works with builders, architects, engineering firms, and home designers on ERI scores and testing, and on Washington State Energy Code compliance for Washington projects.</p>
+        <p>Bell Energy Solutions works with builders, architects, engineering firms, and home designers from design through testing, including Washington State Energy Code compliance for Washington projects.</p>
+        <p>Commercial projects: <a href="/services/commercial-blower-door-testing/">commercial blower door testing</a>, including multi-fan setups.</p>
         <p>Homeowners can book blower door testing, radon testing, and thermal imaging.</p>
         <div class="callout">
           <strong>Service area:</strong> {serviceArea.line}. <a href="/service-area/">See towns</a>

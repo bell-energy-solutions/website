@@ -3,7 +3,8 @@
   --red-dark: #8e1820;
   --navy: #1d3557;
   --navy-deep: #13243c;
-  --green: #2f7d4f;
+  --blue-light: #5b7fb0;
+  --blue-wash: #e8eef6;
   --ink: #16202b;
   --muted: #4f5b67;
   --line: #dde2e8;
@@ -31,7 +32,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--red); text-underline-offset: 3px; }
 a:hover { color: var(--red-dark); }
 
-:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--blue-light); outline-offset: 2px; }
 
 h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; color: var(--navy-deep); }
 h1 { font-size: clamp(2rem, 4.5vw, 3rem); margin: 0 0 0.5em; }
@@ -52,14 +53,14 @@ p { margin: 0 0 1em; }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
 .brand { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.01em; display: flex; align-items: center; gap: 10px; }
 .brand:hover { color: #fff; }
-.brand-mark { width: 12px; height: 28px; background: var(--red); border-radius: 2px; box-shadow: 6px 0 0 var(--green); margin-right: 8px; }
+.brand-mark { width: 12px; height: 28px; background: var(--red); border-radius: 2px; box-shadow: 6px 0 0 var(--blue-light); margin-right: 8px; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a { color: #d9e2ec; text-decoration: none; padding: 10px 12px; border-radius: var(--radius); font-size: 0.95rem; font-weight: 600; }
 .nav a:hover, .nav a[aria-current="page"] { color: #fff; background: rgba(255,255,255,0.08); }
 .header-call { white-space: nowrap; }
 .menu-toggle { display: none; }
 
-@media (max-width: 900px) {
+@media (max-width: 1060px) {
   .nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy-deep); flex-direction: column; align-items: stretch; padding: 8px 20px 16px; border-top: 1px solid rgba(255,255,255,0.1); }
   .nav.open { display: flex; }
   .nav a { padding: 14px 8px; font-size: 1.05rem; }
@@ -110,12 +111,12 @@ p { margin: 0 0 1em; }
 .card .more::after { content: " →"; }
 .card-link { text-decoration: none; color: inherit; transition: border-color .15s, transform .15s; }
 .card-link:hover { border-top-color: var(--red); transform: translateY(-2px); color: inherit; }
-.tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #1e5c38; background: #e7f3ec; padding: 3px 8px; border-radius: 3px; margin-bottom: 10px; align-self: flex-start; }
+.tag { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy); background: var(--blue-wash); padding: 3px 8px; border-radius: 3px; margin-bottom: 10px; align-self: flex-start; }
 
 .checklist { list-style: none; padding: 0; margin: 0 0 1em; }
 .checklist li { position: relative; padding: 8px 0 8px 32px; border-bottom: 1px solid var(--line); }
 .checklist li:last-child { border-bottom: 0; }
-.checklist li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 14px; height: 8px; border-left: 3px solid var(--green); border-bottom: 3px solid var(--green); transform: rotate(-45deg); }
+.checklist li::before { content: ""; position: absolute; left: 4px; top: 16px; width: 14px; height: 8px; border-left: 3px solid var(--red); border-bottom: 3px solid var(--red); transform: rotate(-45deg); }
 
 .spec { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .spec div { display: grid; grid-template-columns: 38% 1fr; border-bottom: 1px solid var(--line); }
@@ -135,7 +136,7 @@ p { margin: 0 0 1em; }
   repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 12px, transparent 12px 24px);
   position: relative; overflow: hidden; }
 .photo-slot::before { content: ""; position: absolute; inset: 18% 22%; border: 2px solid rgba(255,255,255,0.18); border-radius: 4px; }
-.photo-slot::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: 18%; height: 30%; background: linear-gradient(160deg, transparent 50%, rgba(179,32,42,0.45) 50%), linear-gradient(200deg, transparent 55%, rgba(47,125,79,0.45) 55%); }
+.photo-slot::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: 18%; height: 30%; background: linear-gradient(160deg, transparent 50%, rgba(179,32,42,0.45) 50%), linear-gradient(200deg, transparent 55%, rgba(91,127,176,0.45) 55%); }
 .photo-slot.wide { aspect-ratio: 16 / 9; }
 .hero .photo-slot { box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
 

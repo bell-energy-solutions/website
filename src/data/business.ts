@@ -44,18 +44,26 @@ export type Service = {
   homeowners: boolean;
 };
 
+// Order matters: the owner leads with consulting, design, and third-party testing;
+// ERI scores come after, as proof of results (business-facts.md, Positioning).
 export const services: Service[] = [
   {
-    slug: 'eri-scores',
-    name: 'ERI Scores',
-    short: 'Energy Rating Index scores produced by a BSI Level 2 Verifier.',
+    slug: 'design-consulting',
+    name: 'Consulting & Design',
+    short: 'Consulting and design help to build comfortable, quality homes.',
     homeowners: false,
   },
   {
     slug: 'blower-door-testing',
-    name: 'Air Leakage Testing',
-    short: 'Third-party blower door testing by a Retrotec-certified tester.',
+    name: 'Blower Door Testing',
+    short: 'Third-party air leakage testing for homes, by a Retrotec-certified tester.',
     homeowners: true,
+  },
+  {
+    slug: 'commercial-blower-door-testing',
+    name: 'Commercial Blower Door Testing',
+    short: 'Third-party air leakage testing of commercial buildings, including multi-fan setups.',
+    homeowners: false,
   },
   {
     slug: 'thermal-imaging',
@@ -76,9 +84,9 @@ export const services: Service[] = [
     homeowners: false,
   },
   {
-    slug: 'design-consulting',
-    name: 'Design Consulting',
-    short: 'Design help and consulting for more comfortable homes.',
+    slug: 'eri-scores',
+    name: 'ERI Scores',
+    short: 'Energy Rating Index scores that show the results of design and testing.',
     homeowners: false,
   },
 ];

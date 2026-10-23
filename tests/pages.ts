@@ -4,6 +4,7 @@ export const pages = [
   '/services/',
   '/services/eri-scores/',
   '/services/blower-door-testing/',
+  '/services/commercial-blower-door-testing/',
   '/services/thermal-imaging/',
   '/services/radon-testing/',
   '/services/energy-code-compliance/',

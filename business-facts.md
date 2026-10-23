@@ -22,13 +22,20 @@ This file is the single source of truth for the website. Nothing goes on the sit
 - Builders, architects, engineering firms, and home designers
 - Homeowners, for blower door testing, radon testing, and thermal imaging
 
+## Positioning (owner, 2026-10-23; replaces "ERI is the core service")
+- The core of the business is consulting, design, and third-party testing.
+- Lead with how Bell Energy Solutions helps people build comfortable, quality homes, then third-party tests them.
+- ERI scores are given to show the results and prove those homes are comfortable and quality. Don't lead with ERI.
+- Commercial blower door testing is a key piece of the business and gets its own page and navigation tab.
+
 ## Services
-- ERI scores (Energy Rating Index): the core service, produced as a BSI Verifier
-- Third-party air leakage (blower door) testing
+- Consulting and design for comfortable, quality homes (core)
+- Third-party testing (core), including air leakage (blower door) testing
+- Commercial blower door testing, including multi-fan setups (owner, 2026-10-23)
+- ERI scores (Energy Rating Index), produced as a BSI Verifier, to show results
 - Active thermography (thermal imaging)
 - Radon testing
 - Washington State Energy Code compliance help
-- Design help and consulting for more comfortable homes
 
 ## Credentials (exact public wording)
 - Building Science Institute (BSI) Level 2 Verifier
@@ -45,7 +52,7 @@ This file is the single source of truth for the website. Nothing goes on the sit
 
 ## Look, feel, and rules
 - Tone: professional, sharp, very technical
-- Colors: red is the main color; dark blue and green are secondary
+- Colors: red is the main color; dark blue is secondary. No green (owner, 2026-10-23).
 - Logo: none yet. Use "Bell Energy Solutions" as styled text in red.
 - Photos: owner will add later; leave spaces for photos
 - No chat pop-ups

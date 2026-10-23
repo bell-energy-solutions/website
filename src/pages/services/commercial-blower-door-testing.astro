@@ -1,0 +1,31 @@
+---
+import Service from '../../layouts/Service.astro';
+import { serviceArea, business } from '../../data/business';
+---
+<Service
+  slug="commercial-blower-door-testing"
+  title="Commercial Blower Door Testing | Bell Energy Solutions"
+  description="Third-party commercial blower door testing, including multi-fan setups, by a Retrotec-certified tester in Spokane County and Kootenai County."
+  heading="Commercial Blower Door Testing"
+  lead="Third-party air leakage testing of commercial buildings, including multi-fan setups, by a Retrotec-certified tester."
+  photo="Multi-fan blower door setup on a commercial building"
+>
+  <h2>Whole-building air leakage testing</h2>
+  <p>Commercial blower door testing measures how much air a building's envelope leaks. Fans are sealed into exterior openings and used to pressurize or depressurize the building to a set pressure difference. The airflow needed to hold that pressure shows how tight the envelope is.</p>
+
+  <h2>Multi-fan setups</h2>
+  <p>Large buildings need more airflow than a single fan can deliver. A multi-fan setup runs several blower door fans together, controlled as one system, to reach the target test pressure on bigger envelopes.</p>
+
+  <h2>Results</h2>
+  <p>Commercial results are commonly reported as airflow normalized to the building envelope area at a stated test pressure, so buildings of different sizes can be compared.</p>
+
+  <h2>Who it's for</h2>
+  <p>Builders, architects, and engineering firms working on commercial projects.</p>
+
+  <dl class="spec" slot="aside" style="margin-top:20px">
+    <div><dt>Certification</dt><dd>Retrotec certified for residential and commercial blower door testing</dd></div>
+    <div><dt>Setups</dt><dd>Including multi-fan setups</dd></div>
+    <div><dt>Area</dt><dd>{serviceArea.line}</dd></div>
+    <div><dt>Pricing</dt><dd>{business.quoteLine}</dd></div>
+  </dl>
+</Service>
