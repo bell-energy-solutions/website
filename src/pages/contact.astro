@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { business, serviceArea } from '../data/business';
+---
+<Base
+  title="Contact & Request a Quote | Bell Energy Solutions"
+  description="Call 971-340-7390 or email Bell Energy Solutions to schedule testing or request a quote. Monday–Friday, 8 am–5 pm, by appointment."
+>
+  <section class="page-head">
+    <div class="container">
+      <h1>Contact</h1>
+      <p class="lead">Schedule testing or request a quote. {business.quoteLine}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <h2>Call or email</h2>
+        <dl class="spec">
+          <div><dt>Phone</dt><dd><a href={business.phoneHref}>{business.phone}</a></dd></div>
+          <div><dt>Email</dt><dd><a href={`mailto:${business.email}`}>{business.email}</a></dd></div>
+          <div><dt>Hours</dt><dd>{business.hours}</dd></div>
+          <div><dt>Scheduling</dt><dd>{business.hoursNote}</dd></div>
+          <div><dt>Area</dt><dd>{serviceArea.summary}</dd></div>
+        </dl>
+      </div>
+      <div class="callout">
+        <h2 style="font-size:1.35rem">Helpful to include</h2>
+        <ul>
+          <li>The service you need</li>
+          <li>Project address or town</li>
+          <li>Project stage or timeline</li>
+          <li>The best way to reach you</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base
+  title="Privacy Policy | Bell Energy Solutions"
+  description="How Bell Energy Solutions handles information you share through this website, by phone, or by email."
+>
+  <section class="page-head">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="lead">Plain-language summary of how this website handles your information.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <h2>What this website collects</h2>
+      <p>This website does not use cookies, analytics, advertising, or tracking tools.</p>
+
+      <h2>When you contact us</h2>
+      <p>If you call or email, we use the information you give us, such as your name, contact details, and project details, only to respond to you and provide the services you ask about. We don't sell or share it for marketing.</p>
+
+      <h2>Questions</h2>
+      <p>Email <a href={`mailto:${business.email}`}>{business.email}</a> or call <a href={business.phoneHref}>{business.phone}</a>.</p>
+    </div>
+  </section>
+</Base>

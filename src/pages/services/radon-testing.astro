@@ -1,0 +1,25 @@
+---
+import Service from '../../layouts/Service.astro';
+import { serviceArea, business } from '../../data/business';
+---
+<Service
+  slug="radon-testing"
+  title="Radon Testing in Spokane | Bell Energy Solutions"
+  description="Radon testing by an NRPP-certified professional for homeowners and builders in Spokane County and Kootenai County."
+  heading="Radon Testing"
+  lead="Radon testing by a National Radon Proficiency Program (NRPP) certified professional."
+  photo="Radon test in a basement"
+>
+  <h2>Why test for radon</h2>
+  <p>Radon is a colorless, odorless radioactive gas produced by the natural breakdown of uranium in soil and rock. It can enter buildings through the foundation. Testing is the only way to know a building's radon level, and the U.S. EPA recommends testing homes for radon.</p>
+
+  <h2>Who it's for</h2>
+  <p>Homeowners, and builders and design teams who need a radon test for a project.</p>
+
+  <dl class="spec" slot="aside" style="margin-top:20px">
+    <div><dt>Certification</dt><dd>NRPP certified (National Radon Proficiency Program)</dd></div>
+    <div><dt>For</dt><dd>Homeowners, builders, and design teams</dd></div>
+    <div><dt>Area</dt><dd>{serviceArea.summary}</dd></div>
+    <div><dt>Pricing</dt><dd>{business.quoteLine}</dd></div>
+  </dl>
+</Service>

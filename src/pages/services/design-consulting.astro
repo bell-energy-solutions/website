@@ -1,0 +1,25 @@
+---
+import Service from '../../layouts/Service.astro';
+import { serviceArea, business } from '../../data/business';
+---
+<Service
+  slug="design-consulting"
+  title="Comfortable Home Design Consulting | Bell Energy Solutions"
+  description="Design help and consulting for more comfortable homes, for builders, architects, and home designers in Spokane County and Kootenai County."
+  heading="Design Consulting"
+  lead="Design help and consulting for more comfortable homes."
+  photo="Design meeting or plans"
+>
+  <h2>Comfort starts in design</h2>
+  <p>Bell Energy Solutions helps people design more comfortable homes, bringing the same building science behind ERI scores and performance testing into the design phase.</p>
+
+  <h2>Who it's for</h2>
+  <p>Builders, architects, engineering firms, and home designers planning new homes.</p>
+
+  <dl class="spec" slot="aside" style="margin-top:20px">
+    <div><dt>Service</dt><dd>Design help and consulting</dd></div>
+    <div><dt>For</dt><dd>Builders, architects, engineering firms, home designers</dd></div>
+    <div><dt>Area</dt><dd>{serviceArea.summary}</dd></div>
+    <div><dt>Pricing</dt><dd>{business.quoteLine}</dd></div>
+  </dl>
+</Service>

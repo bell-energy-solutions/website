@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+import { business, credentials, services, serviceArea } from '../data/business';
+---
+<Base
+  title="ERI Scores & Building Testing | Bell Energy Solutions"
+  description="ERI scores, blower door testing, thermal imaging, radon testing, and WSEC compliance help in Spokane County and Kootenai County."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Spokane County · Kootenai County</p>
+        <h1>ERI scores and building performance testing</h1>
+        <p class="lead">Third-party verification for builders, architects, engineering firms, and home designers: ERI scores, blower door testing, active thermography, radon testing, and Washington State Energy Code compliance help.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={business.phoneHref}>Call {business.phone}</a>
+          <a class="btn btn-light" href="/contact/">Request a quote</a>
+        </div>
+      </div>
+      <PhotoSlot label="Hero: blower door test or job site" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>Verification, testing, and code compliance</h2>
+        <p>One provider for the energy rating, the field testing, and the code paperwork.</p>
+      </div>
+      <div class="grid-3">
+        {services.map((s) => (
+          <a class="card card-link" href={`/services/${s.slug}/`}>
+            {s.homeowners && <span class="tag">Also for homeowners</span>}
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="more">Details</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container grid-2">
+      <div>
+        <p class="eyebrow">Credentials</p>
+        <h2>Certified for the work</h2>
+        <ul class="checklist">
+          {credentials.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Who we work with</p>
+        <h2>Built for project teams</h2>
+        <p>Bell Energy Solutions works with builders, architects, engineering firms, and home designers on ERI scores, testing, and Washington State Energy Code compliance.</p>
+        <p>Homeowners can book blower door testing, radon testing, and thermal imaging directly.</p>
+        <div class="callout">
+          <strong>Service area:</strong> {serviceArea.summary}. <a href="/service-area/">See towns</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <PhotoSlot label="Thermal image or testing equipment" wide />
+      <div>
+        <p class="eyebrow">Scheduling</p>
+        <h2>By appointment</h2>
+        <dl class="spec">
+          <div><dt>Hours</dt><dd>{business.hours}</dd></div>
+          <div><dt>Scheduling</dt><dd>{business.hoursNote}</dd></div>
+          <div><dt>Pricing</dt><dd>{business.quoteLine}</dd></div>
+          <div><dt>Phone</dt><dd><a href={business.phoneHref}>{business.phone}</a></dd></div>
+          <div><dt>Email</dt><dd><a href={`mailto:${business.email}`}>{business.email}</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</Base>

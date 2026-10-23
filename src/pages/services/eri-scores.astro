@@ -1,0 +1,26 @@
+---
+import Service from '../../layouts/Service.astro';
+import { serviceArea, business } from '../../data/business';
+---
+<Service
+  slug="eri-scores"
+  title="ERI Scores in Spokane | Bell Energy Solutions"
+  description="Energy Rating Index (ERI) scores for builders and designers in Spokane County and Kootenai County, from a BSI Level 2 Verifier."
+  heading="ERI Scores"
+  lead="Energy Rating Index scores for new homes, produced by a Building Science Institute (BSI) Level 2 Verifier."
+  photo="ERI field verification"
+>
+  <h2>What an ERI score measures</h2>
+  <p>The Energy Rating Index (<span class="term">ERI</span>) is a numerical score of a home's energy performance compared with a reference home, as defined by ANSI/RESNET/ICC Standard 301. A lower score means lower modeled energy use.</p>
+  <p>ERI scores are used in ENERGY STAR and DOE Zero Energy Ready Home certification.</p>
+
+  <h2>Who it's for</h2>
+  <p>Builders, architects, engineering firms, and home designers who need an ERI score for a project.</p>
+
+  <dl class="spec" slot="aside" style="margin-top:20px">
+    <div><dt>Verifier</dt><dd>BSI Level 2 Verifier</dd></div>
+    <div><dt>Programs</dt><dd>ENERGY STAR Verifier and Partner; DOE Zero Energy Ready Home certified</dd></div>
+    <div><dt>Area</dt><dd>{serviceArea.summary}</dd></div>
+    <div><dt>Pricing</dt><dd>{business.quoteLine}</dd></div>
+  </dl>
+</Service>

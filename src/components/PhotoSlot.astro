@@ -1,0 +1,10 @@
+---
+// Placeholder for a photo the owner will supply later (business-facts.md: "leave spaces for photos").
+// Replace with an <Image> once a real photo is in src/assets/photos.
+interface Props {
+  label: string;
+  wide?: boolean;
+}
+const { label, wide = false } = Astro.props;
+---
+<div class:list={['photo-slot', { wide }]} role="presentation" data-photo-needed={label}></div>

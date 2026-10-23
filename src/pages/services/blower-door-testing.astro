@@ -1,0 +1,29 @@
+---
+import Service from '../../layouts/Service.astro';
+import { serviceArea, business } from '../../data/business';
+---
+<Service
+  slug="blower-door-testing"
+  title="Blower Door Testing in Spokane | Bell Energy Solutions"
+  description="Third-party blower door air leakage testing for residential and commercial buildings in Spokane County and Kootenai County."
+  heading="Air Leakage Testing"
+  lead="Third-party blower door testing for residential and commercial buildings, by a Retrotec-certified tester."
+  photo="Blower door set up in a doorway"
+>
+  <h2>How a blower door test works</h2>
+  <p>A blower door fan is sealed into an exterior doorway and used to depressurize or pressurize the building to a set pressure difference, typically 50 pascals. The airflow needed to hold that pressure shows how leaky the building envelope is.</p>
+  <p>Results are reported as <span class="term">CFM50</span> (airflow at 50 Pa) and <span class="term">ACH50</span> (air changes per hour at 50 Pa).</p>
+
+  <h2>For builders</h2>
+  <p>The Washington State Energy Code requires air leakage testing of new homes. Bell Energy Solutions provides the third-party test.</p>
+
+  <h2>For homeowners</h2>
+  <p>A blower door test measures how much air your home leaks, the starting point for finding drafts and wasted heating and cooling.</p>
+
+  <dl class="spec" slot="aside" style="margin-top:20px">
+    <div><dt>Certification</dt><dd>Retrotec certified, residential and commercial blower door testing</dd></div>
+    <div><dt>Building types</dt><dd>Residential and commercial</dd></div>
+    <div><dt>Area</dt><dd>{serviceArea.summary}</dd></div>
+    <div><dt>Pricing</dt><dd>{business.quoteLine}</dd></div>
+  </dl>
+</Service>

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base title="Page Not Found | Bell Energy Solutions" description="The page you were looking for doesn't exist.">
+  <section class="page-head">
+    <div class="container">
+      <h1>Page not found</h1>
+      <p class="lead">That page doesn't exist or has moved.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container btn-row">
+      <a class="btn btn-primary" href="/">Go to the home page</a>
+      <a class="btn btn-outline" href="/services/">See services</a>
+      <a class="btn btn-outline" href={business.phoneHref}>Call {business.phone}</a>
+    </div>
+  </section>
+</Base>

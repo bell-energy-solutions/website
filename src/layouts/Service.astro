@@ -1,0 +1,57 @@
+---
+import Base from './Base.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
+import { business, services } from '../data/business';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  lead: string;
+  photo: string;
+  slug: string;
+}
+
+const { title, description, heading, lead, photo, slug } = Astro.props;
+const others = services.filter((s) => s.slug !== slug);
+---
+<Base title={title} description={description}>
+  <section class="page-head">
+    <div class="container">
+      <p class="breadcrumb"><a href="/services/">Services</a> / {heading}</p>
+      <h1>{heading}</h1>
+      <p class="lead">{lead}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <slot />
+        <div class="btn-row" style="margin-top:24px">
+          <a class="btn btn-primary" href={business.phoneHref}>Call {business.phone}</a>
+          <a class="btn btn-outline" href="/contact/">Request a quote</a>
+        </div>
+      </div>
+      <div>
+        <PhotoSlot label={photo} />
+        <slot name="aside" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Other services</h2>
+      <div class="grid-3">
+        {others.map((s) => (
+          <a class="card card-link" href={`/services/${s.slug}/`}>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="more">Details</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { services } from '../../data/business';
+---
+<Base
+  title="Services | Bell Energy Solutions"
+  description="ERI scores, blower door testing, active thermography, radon testing, WSEC compliance help, and design consulting in Spokane County."
+>
+  <section class="page-head">
+    <div class="container">
+      <h1>Services</h1>
+      <p class="lead">Energy ratings, field testing, and code compliance for builders, architects, engineering firms, and home designers. Blower door testing, radon testing, and thermal imaging are also available to homeowners.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3">
+        {services.map((s) => (
+          <a class="card card-link" href={`/services/${s.slug}/`}>
+            {s.homeowners && <span class="tag">Also for homeowners</span>}
+            <h2 style="font-size:1.25rem">{s.name}</h2>
+            <p>{s.short}</p>
+            <span class="more">Details</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

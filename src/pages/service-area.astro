@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { serviceArea, business } from '../data/business';
+---
+<Base
+  title="Spokane & Kootenai County | Bell Energy Solutions"
+  description="Bell Energy Solutions serves Spokane, Spokane Valley, Liberty Lake, Cheney, Coeur d'Alene, Post Falls, Hayden, Rathdrum, and nearby towns."
+>
+  <section class="page-head">
+    <div class="container">
+      <h1>Service area</h1>
+      <p class="lead">Bell Energy Solutions primarily works in {serviceArea.summary}.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      {serviceArea.regions.map((r) => (
+        <div class="card">
+          <h2 style="font-size:1.35rem">{r.name}</h2>
+          <ul class="checklist">
+            {r.towns.map((t) => <li>{t}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="container" style="margin-top:32px">
+      <div class="callout">
+        Not sure if your project is in the area? Call <a href={business.phoneHref}>{business.phone}</a> or <a href="/contact/">send a message</a>.
+      </div>
+    </div>
+  </section>
+</Base>
