@@ -1,0 +1,49 @@
+# AI helper for website change requests.
+#
+# How the owner asks for a change: open a GitHub issue and add the "agent" label
+# (or mention @claude in an issue or pull request comment). The helper reads
+# AGENTS.md, makes the change on a branch, and opens a pull request for review.
+#
+# This is the only file tied to a specific AI vendor. To switch helpers, replace
+# this workflow and its secret (see OPERATIONS.md, "Switching AI agents").
+# Nothing else in the repository depends on it.
+
+name: AI agent
+
+on:
+  issues:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+concurrency:
+  group: ai-agent-${{ github.event.issue.number || github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  agent:
+    if: >-
+      (github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'agent') ||
+      (github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.body, '@claude')) ||
+      (github.event_name != 'issues' && contains(github.event.comment.body, '@claude'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      # Pinned to claude-code-action v1.0.259 (bundles Claude Code 2.1.309, which reads AGENTS.md).
+      - uses: anthropics/claude-code-action@ae68417a745a5df4b2124873632bd73a2255e6f6
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          label_trigger: agent
+          trigger_phrase: "@claude"
