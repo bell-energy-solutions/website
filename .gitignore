@@ -1,0 +1,13 @@
+# Secrets: never commit
+.env.local
+.env
+.env.*
+
+# Local-only helper files
+guide/
+node_modules/
+dist/
+.site-builder/*.log
+.site-builder/research.md
+.claude/settings.local.json
+.claude/launch.json

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start Here: Your New Website</title>
+<style>
+  :root {
+    --bg: #faf8f5; --card: #ffffff; --ink: #1f2328; --muted: #5b6168;
+    --accent: #c4622d; --accent-soft: #fbeee6; --line: #e4e0da; --ok: #2f7d4f; --red: #d92d20;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 19px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+  h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 1.35rem; margin: 0 0 8px; }
+  .lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 28px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+          padding: 24px; margin: 0 0 20px; }
+  .step { display: flex; gap: 18px; }
+  .num { flex: 0 0 48px; height: 48px; border-radius: 50%; background: var(--accent); color: #fff;
+         font-weight: 700; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; }
+  .body { flex: 1; min-width: 0; }
+  .note { font-size: .9rem; color: var(--muted); font-style: italic; margin-top: 6px; }
+  .need li { margin: 4px 0; }
+  .copybox { display: flex; gap: 10px; align-items: center; background: var(--accent-soft);
+             border: 2px dashed var(--accent); border-radius: 12px; padding: 14px 16px; margin: 12px 0;
+             font: 600 1.1rem/1.4 ui-monospace, Menlo, Consolas, monospace; flex-wrap: wrap; }
+  .copybox span { flex: 1; min-width: 200px; }
+  button { font-family: inherit; font-weight: 600; font-size: 1rem; background: var(--accent); color: #fff; border: 0;
+           border-radius: 10px; padding: 10px 18px; cursor: pointer; }
+  button:active { transform: translateY(1px); }
+  svg { width: 100%; height: auto; display: block; margin-top: 12px; border-radius: 10px; }
+  .ok { color: var(--ok); font-weight: 600; }
+  .tip { background: #eef6f1; border-left: 5px solid var(--ok); padding: 14px 16px; border-radius: 8px; margin-top: 12px; }
+  .warn { background: #fff4e5; border-left: 5px solid #e8a33d; padding: 14px 16px; border-radius: 8px; margin-top: 12px; }
+  .buttons-demo { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  .fake { border: 1px solid var(--line); border-radius: 8px; padding: 6px 14px; background: #f3f1ee; font-size: .95rem; }
+  .fake.primary { background: var(--ink); color: #fff; }
+  a { color: var(--accent); }
+  @media print { button { display: none; } .card { break-inside: avoid; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Let's build your website</h1>
+<p class="lead">This page gets you set up in about 15 minutes. After that, Claude does almost all the work and shows you pictures whenever it needs your help.</p>
+
+<div class="card">
+  <h2>What you'll need</h2>
+  <ul class="need">
+    <li>A Mac or Windows computer</li>
+    <li>A paid Claude plan that includes Claude Code (for example Pro or Max). Check the current plans at <a href="https://claude.com/pricing">claude.com/pricing</a>.</li>
+    <li>The login for the company where you bought your web address (for example GoDaddy, Namecheap, or Squarespace Domains)</li>
+    <li>Your business email inbox, to confirm the new accounts Claude helps you set up</li>
+    <li>Your phone, for security codes</li>
+    <li>A payment card for a small pay-as-you-go charge from Anthropic, so Claude can make changes for you on GitHub later. You choose a monthly limit, and Claude explains it when you get there.</li>
+    <li>Some photos of your business (you can add these later)</li>
+  </ul>
+  <div class="tip">It takes about 2–3 hours of your time in total, spread over a few days. You can stop whenever you like. Claude keeps notes in your folder, so it picks up where you left off.</div>
+</div>
+
+<!-- STEP 1 -->
+<div class="card step">
+  <div class="num">1</div>
+  <div class="body">
+    <h2>Install the Claude app</h2>
+    <p>Go to <a href="https://claude.ai/download">claude.ai/download</a>, download the app for your computer, open it, and sign in.</p>
+    <p class="ok">✔ You'll know it worked when you see the Claude app open with a message box.</p>
+    <p>Already have it? Make sure it's up to date, then go to step 2.</p>
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="card step">
+  <div class="num">2</div>
+  <div class="body">
+    <h2>Make a folder for your website</h2>
+    <p>On your Desktop, make a new folder and name it <strong>My Website</strong>.</p>
+    <ul>
+      <li><strong>Mac:</strong> right-click an empty spot on the Desktop and choose <strong>New Folder</strong>.</li>
+      <li><strong>Windows:</strong> right-click an empty spot on the Desktop and choose <strong>New → Folder</strong>.</li>
+    </ul>
+    <p>Then drag the two files you were given, <strong>SITE_BUILDER.md</strong> and this page (<strong>START_HERE.html</strong>), into that folder.</p>
+    <p class="note">On Windows the names may show without the ending, as just <strong>SITE_BUILDER</strong> and <strong>START_HERE</strong>. That's normal: they're the same files.</p>
+    <svg viewBox="0 0 640 220" role="img" aria-label="Drawing: dragging two files into the My Website folder">
+      <rect width="640" height="220" fill="#eaf1f8"/>
+      <g transform="translate(60,60)">
+        <rect width="90" height="110" rx="8" fill="#fff" stroke="#9aa3ad"/>
+        <text x="45" y="62" text-anchor="middle" font-size="13" fill="#1f2328">SITE_</text>
+        <text x="45" y="78" text-anchor="middle" font-size="13" fill="#1f2328">BUILDER.md</text>
+      </g>
+      <g transform="translate(170,60)">
+        <rect width="90" height="110" rx="8" fill="#fff" stroke="#9aa3ad"/>
+        <text x="45" y="62" text-anchor="middle" font-size="13" fill="#1f2328">START_</text>
+        <text x="45" y="78" text-anchor="middle" font-size="13" fill="#1f2328">HERE.html</text>
+      </g>
+      <path d="M280 115 C 340 70, 380 70, 430 105" stroke="#d92d20" stroke-width="6" fill="none"/>
+      <polygon points="430,90 450,112 424,120" fill="#d92d20"/>
+      <g transform="translate(460,55)">
+        <path d="M0 20 h50 l12 -14 h58 v124 h-120 z" fill="#f4c46a" stroke="#c9962f"/>
+        <text x="60" y="160" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">My Website</text>
+      </g>
+    </svg>
+    <p class="note">Simplified drawing: your screen will look a little different.</p>
+  </div>
+</div>
+
+<!-- STEP 3 -->
+<div class="card step">
+  <div class="num">3</div>
+  <div class="body">
+    <h2>Open the Code tab and choose your folder</h2>
+    <p>In the Claude app, click <strong>Code</strong> (near the top or side of the window). Then click the folder picker near the message box and choose your <strong>My Website</strong> folder.</p>
+    <svg viewBox="0 0 640 260" role="img" aria-label="Drawing: the Claude app with the Code tab circled and a folder picker">
+      <rect width="640" height="260" fill="#fff" stroke="#e4e0da"/>
+      <rect width="640" height="44" fill="#f3f1ee"/>
+      <text x="30" y="28" font-size="15" fill="#5b6168">Chat</text>
+      <text x="100" y="28" font-size="15" font-weight="700" fill="#1f2328">Code</text>
+      <ellipse cx="119" cy="23" rx="42" ry="20" fill="none" stroke="#d92d20" stroke-width="5"/>
+      <rect x="170" y="80" width="300" height="130" rx="12" fill="#faf8f5" stroke="#9aa3ad"/>
+      <text x="190" y="110" font-size="15" font-weight="700" fill="#1f2328">Choose a folder</text>
+      <rect x="190" y="125" width="260" height="34" rx="6" fill="#fbeee6" stroke="#c4622d"/>
+      <text x="205" y="148" font-size="15" fill="#1f2328">📁 My Website</text>
+      <rect x="370" y="172" width="80" height="28" rx="6" fill="#1f2328"/>
+      <text x="410" y="191" text-anchor="middle" font-size="13" fill="#fff">Open</text>
+    </svg>
+    <p class="note">Simplified drawing: your screen will look a little different. The official guide with real pictures is at <a href="https://code.claude.com/docs/en/desktop">code.claude.com/docs/en/desktop</a>.</p>
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="card step">
+  <div class="num">4</div>
+  <div class="body">
+    <h2>Two quick settings</h2>
+    <p>Near the message box there are small menus.</p>
+    <ul>
+      <li><strong>Model:</strong> if you see a model menu, choose <strong>Opus</strong> (the newest one listed).</li>
+      <li><strong>Mode:</strong> if you see a mode menu, choose <strong>Auto</strong>. If there's no Auto, choose <strong>Accept edits</strong>.</li>
+    </ul>
+    <div class="warn">Please <strong>don't</strong> choose "Bypass permissions". It turns off safety checks.</div>
+    <p>Not sure? That's fine. Just go to step 5 and Claude will help you set these.</p>
+  </div>
+</div>
+
+<!-- STEP 5 -->
+<div class="card step">
+  <div class="num">5</div>
+  <div class="body">
+    <h2>Tell Claude to start</h2>
+    <p>Copy this sentence, paste it into the message box, and press Enter:</p>
+    <div class="copybox"><span id="startmsg">Read SITE_BUILDER.md and run it.</span><button onclick="copyIt('startmsg', this)">Copy</button></div>
+    <p class="ok">✔ You'll know it worked when Claude replies and starts walking you through the setup.</p>
+  </div>
+</div>
+
+<!-- WHAT HAPPENS NEXT -->
+<div class="card">
+  <h2>What to expect</h2>
+  <p><strong>Permission boxes.</strong> Sometimes a small box will ask if Claude may do something on your computer, like this:</p>
+  <div class="buttons-demo"><span class="fake">Deny</span><span class="fake primary">Allow</span></div>
+  <p>Read what the box says it's for. If you're ever unsure, click Deny and ask Claude, "What was that for?"</p>
+  <p><strong>Questions with buttons.</strong> Claude will often ask you something with clickable answers, like "Done, it worked" or "I'm stuck". Just click the one that fits.</p>
+  <p><strong>Picture guides.</strong> When Claude needs you to do something (like create an account), it will open a guide page with pictures, one step at a time.</p>
+  <p><strong>Stuck?</strong> Take a screenshot and drag it into the message box. Claude can see it and will help.</p>
+</div>
+
+<div class="card">
+  <h2>Three golden rules</h2>
+  <ol>
+    <li><strong>Never type a password into Claude.</strong> You'll always log in yourself, in your web browser.</li>
+    <li><strong>It's fine to say "I don't understand."</strong> Claude will explain it differently.</li>
+    <li><strong>You're in charge.</strong> Nothing goes on your website until you've checked it and said yes.</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>Coming back later</h2>
+  <p>Open the Claude app → <strong>Code</strong> → choose your <strong>My Website</strong> folder, and type:</p>
+  <div class="copybox"><span id="continuemsg">Let's continue setting up my website.</span><button onclick="copyIt('continuemsg', this)">Copy</button></div>
+</div>
+
+</main>
+<script>
+function copyIt(id, b) {
+  var t = document.getElementById(id).textContent;
+  function show(msg) { b.textContent = msg; setTimeout(function(){ b.textContent = 'Copy'; }, 2500); }
+  function tryFallback() { show(fallback(t) ? 'Copied!' : 'Select and copy it yourself'); }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(t).then(function(){ show('Copied!'); }, tryFallback);
+  } else {
+    tryFallback();
+  }
+}
+function fallback(t) {
+  var a = document.createElement('textarea');
+  a.value = t; a.readOnly = true;
+  a.style.position = 'fixed'; a.style.top = '0'; a.style.left = '0'; a.style.opacity = '0';
+  document.body.appendChild(a);
+  a.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(a);
+  return ok;
+}
+</script>
+</body>
+</html>
