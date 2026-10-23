@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base title="Message Sent | Bell Energy Solutions" description="Thanks for contacting Bell Energy Solutions." noindex>
+  <section class="page-head">
+    <div class="container">
+      <h1>Thanks, your message was sent</h1>
+      <p class="lead">We'll get back to you. {business.hours}. {business.hoursNote}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container btn-row">
+      <a class="btn btn-primary" href={business.phoneHref}>Call {business.phone}</a>
+      <a class="btn btn-outline" href="/services/">Back to services</a>
+    </div>
+  </section>
+</Base>

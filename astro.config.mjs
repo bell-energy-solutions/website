@@ -5,5 +5,5 @@ export default defineConfig({
   site: 'https://bellenergysolutions.com',
   output: 'static',
   trailingSlash: 'ignore',
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/thank-you') })],
 });

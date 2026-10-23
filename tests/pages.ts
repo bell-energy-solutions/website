@@ -13,4 +13,5 @@ export const pages = [
   '/about/',
   '/contact/',
   '/privacy/',
+  '/thank-you/',
 ];
