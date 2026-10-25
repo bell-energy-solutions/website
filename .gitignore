@@ -16,4 +16,4 @@ playwright-report/
 .claude/launch.json
 
 # Owner's original photos (may contain location data); optimized copies live in src/assets/photos
-/photos/
+/photos/.site-builder/zone-id.txt
