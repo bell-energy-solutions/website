@@ -1,0 +1,52 @@
+# DNS snapshot for bellenergysolutions.com, taken 2026-10-23 13:51 -07:00 via DNS-over-HTTPS (Cloudflare and Google resolvers)
+# Source of truth before moving nameservers to Cloudflare (SITE_BUILDER.md step 6.1)
+bellenergysolutions.com          NS     [cloudflare] status=0 : 2|ttl=1800|dns1.registrar-servers.com.  ;;  2|ttl=1800|dns2.registrar-servers.com.
+bellenergysolutions.com          NS     [google] status=0 : 2|ttl=1800|dns2.registrar-servers.com.  ;;  2|ttl=1800|dns1.registrar-servers.com.
+bellenergysolutions.com          SOA    [cloudflare] status=0 : 6|ttl=3601|dns1.registrar-servers.com. hostmaster.registrar-servers.com. 1787936497 43200 3600 604800 3601
+bellenergysolutions.com          SOA    [google] status=0 : 6|ttl=3601|dns1.registrar-servers.com. hostmaster.registrar-servers.com. 1787936497 43200 3600 604800 3601
+bellenergysolutions.com          A      [cloudflare] status=0 : 
+bellenergysolutions.com          A      [google] status=0 : 
+bellenergysolutions.com          AAAA   [cloudflare] status=0 : 
+bellenergysolutions.com          AAAA   [google] status=0 : 
+bellenergysolutions.com          MX     [cloudflare] status=0 : 15|ttl=1799|1 smtp.google.com.
+bellenergysolutions.com          MX     [google] status=0 : 15|ttl=1799|1 smtp.google.com.
+bellenergysolutions.com          TXT    [cloudflare] status=0 : 16|ttl=1799|"google-site-verification=imPrZCWn8RY88uUW4ILwuoAmtKeps8vFf4VqmhfLgJY"
+bellenergysolutions.com          TXT    [google] status=0 : 16|ttl=1799|google-site-verification=imPrZCWn8RY88uUW4ILwuoAmtKeps8vFf4VqmhfLgJY
+bellenergysolutions.com          CAA    [cloudflare] status=0 : 
+bellenergysolutions.com          CAA    [google] status=0 : 
+www.bellenergysolutions.com      A      [cloudflare] status=3 : 
+www.bellenergysolutions.com      A      [google] status=3 : 
+www.bellenergysolutions.com      AAAA   [cloudflare] status=3 : 
+www.bellenergysolutions.com      AAAA   [google] status=3 : 
+www.bellenergysolutions.com      CNAME  [cloudflare] status=3 : 
+www.bellenergysolutions.com      CNAME  [google] status=3 : 
+_dmarc.bellenergysolutions.com   TXT    [cloudflare] status=3 : 
+_dmarc.bellenergysolutions.com   TXT    [google] status=3 : 
+google._domainkey.bellenergysolutions.com TXT    [cloudflare] status=0 : 16|ttl=1799|"v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4m1dD5m3CWdQRJ62w6QWTwX/UaMKrzdMpc1Il28NPwifi8zIgl6BR0yJmC7O/Xv6S8jLYt9Fx1g07knUL057nYi6L7HVNYuB4joKw4tagjFL4PWzJwJThv7Jw0tHDh183Ff/hnCUIDlflJ5cvXX/S+LqTSwPuL1AvqQPYR7bN+dh7GtpHPAtHGSaSJf4SYd6sys" "wbkW1Uijo8qRRHzK7p/z2YjWwwmd5u1s973O6ddYji1C6SBuCTagDsXiTd/HPOfwG2EfHRLpaSHBuomurNp4vTtOpnmgucTKsPJcZ7KeOzu+W5lmNyZXsSWnn7g1mWxPxcFkTFt5ynV0armRS1wIDAQAB"
+google._domainkey.bellenergysolutions.com TXT    [google] status=0 : 16|ttl=1799|v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4m1dD5m3CWdQRJ62w6QWTwX/UaMKrzdMpc1Il28NPwifi8zIgl6BR0yJmC7O/Xv6S8jLYt9Fx1g07knUL057nYi6L7HVNYuB4joKw4tagjFL4PWzJwJThv7Jw0tHDh183Ff/hnCUIDlflJ5cvXX/S+LqTSwPuL1AvqQPYR7bN+dh7GtpHPAtHGSaSJf4SYd6syswbkW1Uijo8qRRHzK7p/z2YjWwwmd5u1s973O6ddYji1C6SBuCTagDsXiTd/HPOfwG2EfHRLpaSHBuomurNp4vTtOpnmgucTKsPJcZ7KeOzu+W5lmNyZXsSWnn7g1mWxPxcFkTFt5ynV0armRS1wIDAQAB
+selector1._domainkey.bellenergysolutions.com CNAME  [cloudflare] status=3 : 
+selector1._domainkey.bellenergysolutions.com CNAME  [google] status=3 : 
+selector2._domainkey.bellenergysolutions.com CNAME  [cloudflare] status=3 : 
+selector2._domainkey.bellenergysolutions.com CNAME  [google] status=3 : 
+default._domainkey.bellenergysolutions.com TXT    [cloudflare] status=3 : 
+default._domainkey.bellenergysolutions.com TXT    [google] status=3 : 
+mail.bellenergysolutions.com     CNAME  [cloudflare] status=3 : 
+mail.bellenergysolutions.com     CNAME  [google] status=3 : 
+mail.bellenergysolutions.com     A      [cloudflare] status=3 : 
+mail.bellenergysolutions.com     A      [google] status=3 : 
+calendar.bellenergysolutions.com CNAME  [cloudflare] status=3 : 
+calendar.bellenergysolutions.com CNAME  [google] status=3 : 
+drive.bellenergysolutions.com    CNAME  [cloudflare] status=3 : 
+drive.bellenergysolutions.com    CNAME  [google] status=3 : 
+docs.bellenergysolutions.com     CNAME  [cloudflare] status=3 : 
+docs.bellenergysolutions.com     CNAME  [google] status=3 : 
+sites.bellenergysolutions.com    CNAME  [cloudflare] status=3 : 
+sites.bellenergysolutions.com    CNAME  [google] status=3 : 
+autodiscover.bellenergysolutions.com CNAME  [cloudflare] status=3 : 
+autodiscover.bellenergysolutions.com CNAME  [google] status=3 : 
+ftp.bellenergysolutions.com      A      [cloudflare] status=3 : 
+ftp.bellenergysolutions.com      A      [google] status=3 : 
+webmail.bellenergysolutions.com  CNAME  [cloudflare] status=3 : 
+webmail.bellenergysolutions.com  CNAME  [google] status=3 : 
+_spf.bellenergysolutions.com     TXT    [cloudflare] status=3 : 
+_spf.bellenergysolutions.com     TXT    [google] status=3 : 
