@@ -17,3 +17,4 @@ playwright-report/
 
 # Owner's original photos (may contain location data); optimized copies live in src/assets/photos
 /photos/
+.site-builder/zone-id.txt
