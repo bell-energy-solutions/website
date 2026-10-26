@@ -37,7 +37,7 @@ export const credentials = [
   'ENERGY STAR Verifier and ENERGY STAR Partner',
   'DOE Zero Energy Ready Home certified',
   'NRPP certified (National Radon Proficiency Program)',
-  'Retrotec certified for residential and commercial blower door testing',
+  'Retrotec certified for residential blower door testing',
 ];
 
 export type Service = {
@@ -65,7 +65,7 @@ export const services: Service[] = [
   {
     slug: 'commercial-blower-door-testing',
     name: 'Commercial Blower Door Testing',
-    short: 'Third-party air leakage testing of commercial buildings, including multi-fan setups.',
+    short: 'Commercial air leakage testing, including multi-fan setups, to help you meet the Washington State Energy Code.',
     homeowners: false,
   },
   {

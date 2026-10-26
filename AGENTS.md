@@ -23,9 +23,10 @@
   (This is about how you talk to the owner in issues and PRs. Website copy itself is technical; see Voice.)
 
 ## Voice
-- Professional, sharp, and technical: the audience is builders, architects, engineering firms,
-  and home designers. Use correct building-science terms (ACH50, ERI, air barrier, WSEC).
-  Short sentences. No superlatives unless business-facts.md backs them.
+- Professional and technical, but warm and human: lead with helping people design comfortable,
+  long-lasting homes (the owner's mission). Audience is builders, architects, engineering firms,
+  home designers, and homeowners. Use correct building-science terms (ACH50, ERI, air barrier,
+  WSEC) on service pages. Short sentences. No superlatives unless business-facts.md backs them.
 
 ## Structure
 - Astro, static output. Pages in src/pages, shared layout in src/layouts, shared parts in src/components.

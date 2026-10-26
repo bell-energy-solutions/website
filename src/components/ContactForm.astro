@@ -22,6 +22,16 @@ const thankYouUrl = new URL(contactForm.thankYouPath, Astro.site).href;
   <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
 
   <div class="field">
+    <label for="cf-service">What can we help with? <span class="req" aria-hidden="true">*</span></label>
+    <select id="cf-service" name="service" required aria-describedby="cf-service-err">
+      <option value="">Choose a service</option>
+      {services.map((s) => <option>{s.name}</option>)}
+      <option>Not sure / other</option>
+    </select>
+    <p class="field-error" id="cf-service-err" hidden>Please choose a service, or "Not sure / other".</p>
+  </div>
+
+  <div class="field">
     <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
     <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err" />
     <p class="field-error" id="cf-name-err" hidden>Please enter your name.</p>
@@ -39,17 +49,14 @@ const thankYouUrl = new URL(contactForm.thankYouPath, Astro.site).href;
   </div>
 
   <div class="field">
-    <label for="cf-service">Service <span class="optional">(optional)</span></label>
-    <select id="cf-service" name="service">
-      <option value="">Choose a service</option>
-      {services.map((s) => <option>{s.name}</option>)}
-      <option>Not sure / other</option>
-    </select>
+    <label for="cf-plans">Plan sets or details <span class="optional">(optional)</span></label>
+    <textarea id="cf-plans" name="plans_or_details" rows="4" aria-describedby="cf-plans-hint"></textarea>
+    <p class="field-hint" id="cf-plans-hint">Paste a link to your plan set (Google Drive, Dropbox, OneDrive, or similar), or list key details: square footage, number of stories, wall and roof assemblies, or which code path you're using. Have PDFs instead? Reply to our email with them attached.</p>
   </div>
 
   <div class="field">
     <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
-    <textarea id="cf-message" name="message" rows="6" required aria-describedby="cf-message-hint cf-message-err"></textarea>
+    <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-hint cf-message-err"></textarea>
     <p class="field-hint" id="cf-message-hint">Project address or town, stage or timeline, and what you need.</p>
     <p class="field-error" id="cf-message-err" hidden>Please enter a message.</p>
   </div>
@@ -60,30 +67,35 @@ const thankYouUrl = new URL(contactForm.thankYouPath, Astro.site).href;
 </form>
 
 <script>
+  type Field = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
 
-  function showError(input: HTMLInputElement | HTMLTextAreaElement, show: boolean) {
+  function showError(input: Field, show: boolean) {
     const err = document.getElementById(input.id + '-err');
     if (err) err.hidden = !show;
     input.setAttribute('aria-invalid', String(show));
   }
 
+  const isValid = (input: Field) => input.value.trim() !== '' && input.checkValidity();
+
   function validate(): boolean {
     if (!form) return false;
-    let firstBad: HTMLElement | null = null;
-    form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]').forEach((input) => {
-      const ok = input.value.trim() !== '' && input.checkValidity();
+    let firstBad: Field | null = null;
+    form.querySelectorAll<Field>('[required]').forEach((input) => {
+      const ok = isValid(input);
       showError(input, !ok);
       if (!ok && !firstBad) firstBad = input;
     });
-    (firstBad as HTMLElement | null)?.focus();
+    (firstBad as Field | null)?.focus();
     return firstBad === null;
   }
 
-  form?.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[required]').forEach((input) => {
-    input.addEventListener('blur', () => {
-      if (input.getAttribute('aria-invalid') === 'true') showError(input, !(input.value.trim() && input.checkValidity()));
-    });
+  form?.querySelectorAll<Field>('[required]').forEach((input) => {
+    const recheck = () => {
+      if (input.getAttribute('aria-invalid') === 'true') showError(input, !isValid(input));
+    };
+    input.addEventListener('blur', recheck);
+    input.addEventListener('change', recheck);
   });
 
   form?.addEventListener('submit', async (event) => {

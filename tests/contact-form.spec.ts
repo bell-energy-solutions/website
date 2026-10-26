@@ -11,10 +11,11 @@ test('contact form sends a well-formed request and shows the thank-you page', as
   });
 
   await page.goto('/contact/');
+  await page.getByLabel('What can we help with?').selectOption('Energy Code Compliance');
   await page.getByLabel('Name').fill('Test Person');
   await page.getByLabel('Email').fill('test@example.com');
   await page.getByLabel('Phone').fill('509-555-0100');
-  await page.getByLabel('Service').selectOption('Commercial Blower Door Testing');
+  await page.getByLabel('Plan sets or details').fill('https://drive.example.com/plans.pdf - 2,400 sq ft, two stories');
   await page.getByLabel('Message').fill('Testing the contact form.');
   await page.getByRole('button', { name: 'Send message' }).click();
 
@@ -22,10 +23,11 @@ test('contact form sends a well-formed request and shows the thank-you page', as
   await expect(page.locator('h1')).toContainText('message was sent');
 
   expect(body).toBeDefined();
+  expect(body!.service).toBe('Energy Code Compliance');
   expect(body!.name).toBe('Test Person');
   expect(body!.email).toBe('test@example.com');
   expect(body!.phone).toBe('509-555-0100');
-  expect(body!.service).toBe('Commercial Blower Door Testing');
+  expect(body!.plans_or_details).toBe('https://drive.example.com/plans.pdf - 2,400 sq ft, two stories');
   expect(body!.message).toBe('Testing the contact form.');
   expect(body!.subject).toBeTruthy();
   expect(body!.botcheck, 'spam trap must stay empty').toBeUndefined();
@@ -44,10 +46,11 @@ test('contact form shows clear errors and sends nothing when required fields are
   await page.goto('/contact/');
   await page.getByRole('button', { name: 'Send message' }).click();
 
+  await expect(page.getByText('Please choose a service')).toBeVisible();
   await expect(page.getByText('Please enter your name.')).toBeVisible();
   await expect(page.getByText('Please enter a valid email address')).toBeVisible();
   await expect(page.getByText('Please enter a message.')).toBeVisible();
-  await expect(page.getByLabel('Name')).toBeFocused();
+  await expect(page.getByLabel('What can we help with?')).toBeFocused();
 
   await page.getByLabel('Email').fill('not-an-email');
   await page.getByRole('button', { name: 'Send message' }).click();
@@ -58,6 +61,7 @@ test('contact form shows clear errors and sends nothing when required fields are
 test('contact form shows a fallback message if sending fails', async ({ page }) => {
   await page.route(ENDPOINT, (route) => route.fulfill({ status: 500, body: '{}' }));
   await page.goto('/contact/');
+  await page.getByLabel('What can we help with?').selectOption('Radon Testing');
   await page.getByLabel('Name').fill('Test Person');
   await page.getByLabel('Email').fill('test@example.com');
   await page.getByLabel('Message').fill('Testing failure handling.');
