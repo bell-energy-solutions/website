@@ -27,6 +27,7 @@
   long-lasting homes (the owner's mission). Audience is builders, architects, engineering firms,
   home designers, and homeowners. Use correct building-science terms (ACH50, ERI, air barrier,
   WSEC) on service pages. Short sentences. No superlatives unless business-facts.md backs them.
+  In body text write "we / us / our", not "Bell Energy Solutions" (keep the name in titles and the logo).
 
 ## Structure
 - Astro, static output. Pages in src/pages, shared layout in src/layouts, shared parts in src/components.
