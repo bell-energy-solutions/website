@@ -6,6 +6,7 @@
   "domain": "bellenergysolutions.com",
   "registrar": "Namecheap",
   "current_step": "7.5",
+  "we_voice": "2026-10-27 PR #12 merged and verified live (we/us/our in body text). Owner asked to remove the About 'What we do' section: PR #13 opened (checks running); merge waits for the owner's explicit OK (auto mode refused merging on 'get rid of this' alone). Owner's latest photos withheld: Retrotec catalog image, The Energy Conservatory blower door photo, small FLIR image; asked owner which (if any) are theirs",
   "design_refresh": "2026-10-27 PR #11 merged (c745a02): radius 2px, red #d61f2c, navy #0f3c8a, deep #0a2152, accent #2f7be5, angled hero stripes, recolored logo/favicon; contrast checked (WCAG AA); verified live",
   "search_console": "7.4 owner reported done 2026-10-27 (no new TXT code pasted; likely auto-verified via the existing google-site-verification TXT; sitemap-index.xml submitted per owner). Claude cannot see Search Console to confirm",
   "spf_dmarc": "Offered 2026-10-27; owner said 'Not now'. Revisit later (Phase 8 handbook / OPERATIONS)",
