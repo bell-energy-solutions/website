@@ -56,7 +56,8 @@ This file is the single source of truth for the website. Nothing goes on the sit
 
 ## Look, feel, and rules
 - Tone: professional and technical, but a little more human and warm (owner, 2026-10-25): talk about helping people, not just services
-- Colors: red is the main color; dark blue is secondary. No green (owner, 2026-10-23).
+- Colors: red is the main color; dark blue is secondary. No green (owner, 2026-10-23). Vibrant shades (owner, 2026-10-27): red #d61f2c, navy #0f3c8a, deep navy #0a2152, accent blue #2f7be5.
+- Style: sharp, modern, professional; crisp corners (owner, 2026-10-27)
 - Logo: blower door fan mark (owner chose option A, 2026-10-23), redrawn from the owner's own DBA logo: frame, outline and two blades red, one blade dark blue, no text. Shown beside "Bell Energy Solutions" in the header and as the browser-tab icon (src/components/LogoMark.astro, public/favicon.svg).
 - Photos: owner supplied 3 (2026-10-23); 2 blower door photos used. Thermal comparison image on the Thermal Imaging page (owner confirmed it's their own photo, 2026-10-23; low resolution, swap for the camera original if available). Furnace/meter photo held (shows another company's labels). Leave spaces for more photos.
 - No chat pop-ups
