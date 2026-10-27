@@ -6,6 +6,7 @@
   "domain": "bellenergysolutions.com",
   "registrar": "Namecheap",
   "current_step": "7.5",
+  "design_refresh": "2026-10-27 PR #11 merged (c745a02): radius 2px, red #d61f2c, navy #0f3c8a, deep #0a2152, accent #2f7be5, angled hero stripes, recolored logo/favicon; contrast checked (WCAG AA); verified live",
   "search_console": "7.4 owner reported done 2026-10-27 (no new TXT code pasted; likely auto-verified via the existing google-site-verification TXT; sitemap-index.xml submitted per owner). Claude cannot see Search Console to confirm",
   "spf_dmarc": "Offered 2026-10-27; owner said 'Not now'. Revisit later (Phase 8 handbook / OPERATIONS)",
   "owner_tests": "2026-10-27 owner asked Claude to run 7.2/7.3. Gmail connector is caleb4444@gmail.com (has send-as for caleb@bellenergysolutions.com, but the business inbox is separate). Sent test email caleb4444 -> caleb@bellenergysolutions.com (msg 1a17dfe2c6879de2, asks for a reply). Submitted the live contact form at 375px (service 'Not sure / other', test@example.com); thank-you page shown. Owner confirmed both arrived in the business inbox (7.2 inbound + 7.3 form verified). Owner replied, but the reply had not reached caleb4444 (inbox, spam, anywhere) after ~2 min; outbound mail doesn't depend on the moved MX/DKIM records. Domain still has no SPF or DMARC (unchanged from before): offer to add with before/after table and owner's yes",
