@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import PhotoSlot from '../components/PhotoSlot.astro';
+import CertifiedBy from '../components/CertifiedBy.astro';
 import { business, credentials, services, serviceArea } from '../data/business';
 import twoFan from '../assets/photos/blower-door-two-fan-setup.jpg';
 import frames from '../assets/photos/retrotec-blower-door-frames.jpg';
@@ -23,6 +24,8 @@ import frames from '../assets/photos/retrotec-blower-door-frames.jpg';
       <PhotoSlot label="Hero: blower door test or job site" image={twoFan} alt="Two Retrotec blower door fans set up in an exterior doorway during an air leakage test" position="50% 62%" eager />
     </div>
   </section>
+
+  <CertifiedBy />
 
   <section class="section">
     <div class="container">

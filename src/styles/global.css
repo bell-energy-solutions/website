@@ -164,6 +164,19 @@ p { margin: 0 0 1em; }
 @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 
+/* Certified-by logo strip */
+.certified { background: #fff; border-bottom: 1px solid var(--line); padding: 28px 0; }
+.certified-inner { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+.certified-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 0; font-weight: 700; }
+.certified-logos { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+.certified-logos img { height: 84px; width: auto; }
+@media (max-width: 640px) {
+  .certified-inner { justify-content: center; text-align: center; gap: 16px; }
+  .certified-label { width: 100%; }
+  .certified-logos { justify-content: center; gap: 24px; }
+  .certified-logos img { height: 64px; }
+}
+
 /* Contact form */
 .contact-form { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: var(--radius); padding: 24px; }
 .field { margin: 0 0 18px; }

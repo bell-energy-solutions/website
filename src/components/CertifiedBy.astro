@@ -1,0 +1,28 @@
+---
+// Logos of the organizations that certified the owner (owner supplied, 2026-10-27).
+// Shown in their official colors; don't recolor or alter certification marks.
+// The ENERGY STAR file is a small web copy the owner chose to use (2026-10-27); replace it
+// with the official partner mark from the owner's My ENERGY STAR Account when available.
+import { Image } from 'astro:assets';
+import nrpp from '../assets/logos/nrpp.png';
+import zerh from '../assets/logos/doe-zero-energy-ready-home.png';
+import bsi from '../assets/logos/building-science-institute.png';
+import energyStar from '../assets/logos/energy-star-partner.png';
+
+const logos = [
+  { src: bsi, alt: 'Building Science Institute (BSI)' },
+  { src: energyStar, alt: 'ENERGY STAR Partner' },
+  { src: zerh, alt: 'U.S. Department of Energy Zero Energy Ready Home' },
+  { src: nrpp, alt: 'National Radon Proficiency Program (NRPP)' },
+];
+---
+<section class="certified" aria-labelledby="certified-heading">
+  <div class="container certified-inner">
+    <h2 id="certified-heading" class="certified-label">Certified by</h2>
+    <ul class="certified-logos">
+      {logos.map((l) => (
+        <li><Image src={l.src} alt={l.alt} height={84} densities={[1, 2]} loading="lazy" /></li>
+      ))}
+    </ul>
+  </div>
+</section>
